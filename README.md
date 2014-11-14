@@ -1,0 +1,2 @@
+dockerenv_mailgun
+=================
