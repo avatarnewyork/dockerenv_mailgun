@@ -15,4 +15,4 @@ RUN postconf -e 'smtp_sasl_auth_enable = yes'
 
 EXPOSE 25
 
-CMD ["sh", "-c", "postconf -e \"smtp_sasl_password_maps = static:$POSTFIX_USER:$POSTFIX_PWD\"; postconf -e \"myhostname = $POSTFIX_HOSTNAME\"; service postfix start"]
+CMD ["sh", "-c", "postconf -e \"smtp_sasl_password_maps = static:$POSTFIX_USER:$POSTFIX_PWD\"; postconf -e \"myhostname = $POSTFIX_HOSTNAME\"; service postfix start; tail -F /var/log/mail.log"]
